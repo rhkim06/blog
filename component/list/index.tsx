@@ -8,7 +8,11 @@ interface IProps {
 
 const List: FC<IProps> = memo((props) => {
   const { children } = props
-  return <Wrapper>{children}</Wrapper>
+  return (
+    <Wrapper>
+      <ul>{children}</ul>
+    </Wrapper>
+  )
 })
 
 export default List

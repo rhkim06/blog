@@ -2,11 +2,11 @@ import styled from 'styled-components'
 type IProps = {
   animate?: boolean
 }
-const Wrapper = styled.div<IProps>`
-  li {
-    position: relative;
+const Wrapper = styled.li<IProps>`
+  .item {
     display: inline-block;
-    margin-left: 8px;
+    position: relative;
+    margin: 4px 0 0 8px;
     font-size: 13px;
     &::before {
       content: '';
@@ -30,18 +30,20 @@ const Wrapper = styled.div<IProps>`
       transform: rotate(-45deg);
       animation: rotateInfinite2 linear 7000ms infinite;
     }
-    .line {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 1px;
-      background-color: #d3d3d3;
-      transform-origin: 0 0;
-      transform: scale(0);
-      animation: ${({ animate }) => (animate ? 'flash 1000ms ease forwards' : '')};
-    }
   }
+
+  .line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #d3d3d3;
+    transform-origin: 0 0;
+    transform: scale(0);
+    animation: ${({ animate }) => (animate ? 'flash 1000ms ease forwards' : '')};
+  }
+
   @keyframes rotateInfinite {
     to {
       transform: rotate(405deg);

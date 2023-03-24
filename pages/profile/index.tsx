@@ -3,7 +3,7 @@ import type { FC, ReactNode } from 'react'
 import Wrapper from './styled'
 import Layout from '@component/layout'
 import Title from '@component/title'
-import Slider from 'react-slick'
+import Slider, { Settings } from 'react-slick'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -15,12 +15,23 @@ interface IProps {
 }
 
 const Profile: FC<IProps> = memo(() => {
-  const settings = {
+  const settings: Settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    touchMove: true,
+    customPaging: (i) => (
+      <div
+        style={{
+          width: '30px',
+          color: '#999'
+        }}
+      >
+        {i + 1}
+      </div>
+    )
   }
   const [first, setFirst] = useState(false)
   const [second, setSecond] = useState(false)

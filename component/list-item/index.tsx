@@ -11,12 +11,10 @@ const ListItem: FC<IProps> = memo((props) => {
   const { children, animate } = props
   return (
     <Wrapper animate={animate}>
-      <ul>
-        <li>
-          {children}
-          <div className="line indent-full">line</div>
-        </li>
-      </ul>
+      <div className="item">
+        {children}
+        <div className="line indent-full">line</div>
+      </div>
     </Wrapper>
   )
 })

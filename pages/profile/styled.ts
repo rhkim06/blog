@@ -1,3 +1,4 @@
+import { mobile } from '@styles/mixins'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -15,7 +16,8 @@ const Wrapper = styled.div`
     }
   }
   .slick-list {
-    width: calc(100vw - 468px);
+    width: 700px;
+    ${mobile(`width: 70vw;`)}
   }
   .company {
     .period {
@@ -44,6 +46,29 @@ const Wrapper = styled.div`
   }
   .slick-dots li button:before {
     color: #fff;
+  }
+  .slick-dots {
+    top: -10px;
+    .slick-active {
+      transform: scale(2);
+      div {
+        color: #fff !important;
+      }
+    }
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 50px;
+    ${mobile(`font-size: 24px;`)}
+  }
+
+  .slick-prev {
+    left: -60px;
+    ${mobile(`left: -28px;`)}
+  }
+  .slick-next {
+    right: -30px;
+    ${mobile(`right: -25px;`)}
   }
 `
 export default Wrapper
