@@ -102,7 +102,7 @@ const About: FC<IProps> = memo(() => {
         <div className="down">
           <CodePreview tag="download" shake>
             <div className="download">
-              <a href="/resume.pdf" download="joy_ryu_resume">
+              <a href="/resume.doc" download="joy_ryu_resume">
                 简历.doc
               </a>
             </div>
