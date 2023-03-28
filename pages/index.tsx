@@ -11,6 +11,8 @@ import { useEffect } from 'react'
 import Link from 'next/link'
 import Code from '@component/code'
 import CodePreview from '@component/code-preview'
+import Mask from '@component/mask'
+import Popup from '@component/popup'
 
 interface IProps {
   children?: ReactNode
@@ -38,7 +40,7 @@ const About: FC<IProps> = memo(() => {
 
   const [iconClicked, setIconClicked] = useState(false)
   const [streamIndex, setStreamIndex] = useState(0)
-
+  const [downPopupVisible, setDownPopupVisible] = useState(false)
   // Effects
   useEffect(() => {
     if (streamIndex > 0) {
@@ -77,7 +79,9 @@ const About: FC<IProps> = memo(() => {
     dispatch({ type: streamIndex, payload: { type: false, end: true } })
     setStreamIndex(streamIndex + 1)
   }
-  const downClickHandler = () => {}
+  const donwPopupClickHandler = () => {
+    setDownPopupVisible(!downPopupVisible)
+  }
   return (
     <Wrapper>
       <Layout>
@@ -101,13 +105,25 @@ const About: FC<IProps> = memo(() => {
         <Code>Telegram: jryu2000</Code>
         <div className="down">
           <CodePreview tag="download" shake>
-            <div className="download">
-              <a href="/resume.doc" download="joy_ryu_resume">
-                简历.doc
-              </a>
+            <div className="resume" onClick={donwPopupClickHandler}>
+              简历.doc
             </div>
           </CodePreview>
         </div>
+        {downPopupVisible && (
+          <Mask>
+            <Popup width={400} height={100} setDownPopupVisible={donwPopupClickHandler}>
+              <div className="link-wrap">
+                <a className="link" href="/frontend_LiuXi_en.docx" download="resume_LiuXi_Frontend">
+                  Download Resume
+                </a>
+                <a className="link" href="/frontend_JoyRyu_cn.docx" download="简历_柳熙_前端">
+                  下载简历
+                </a>
+              </div>
+            </Popup>
+          </Mask>
+        )}
       </Layout>
     </Wrapper>
   )
