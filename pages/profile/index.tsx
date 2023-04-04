@@ -36,22 +36,34 @@ const Profile: FC<IProps> = memo(() => {
   const [first, setFirst] = useState(false)
   const [second, setSecond] = useState(false)
   const [third, setThird] = useState(false)
+  const [fourth, setFourth] = useState(false)
   const afterChange = (currentSlide: number) => {
     switch (currentSlide) {
       case 0:
         setFirst(true)
         setSecond(false)
         setThird(false)
+        setFourth(false)
         break
       case 1:
         setFirst(false)
         setSecond(true)
         setThird(false)
+        setFourth(false)
+
         break
       case 2:
         setFirst(false)
         setSecond(false)
         setThird(true)
+        setFourth(false)
+
+        break
+      case 3:
+        setFirst(false)
+        setSecond(false)
+        setThird(false)
+        setFourth(true)
         break
       default:
         break
@@ -67,60 +79,114 @@ const Profile: FC<IProps> = memo(() => {
           <div className="content">
             <Title>Professional Skills</Title>
             <List>
-              <ListItem animate={first}>精通使用 HTML, CSS, Javascript 开发页面，精通各种布局和各种终端适配</ListItem>
-              <ListItem animate={first}>精通 ES6/ES7/Typescript 及原生方法，开发可维护代码及代码的重构</ListItem>
-              <ListItem animate={first}>精通使用Vue, React 主流框架</ListItem>
-              <ListItem animate={first}>精通 Antd、elelmentUl、MaterialUI, Vant 等常见 UI 框架</ListItem>
-              <ListItem animate={first}>精通 Git 版本控制工具，进行团队协作开发项目</ListItem>
-              <ListItem animate={first}>精通模块化，自动化构建工具 webpack 和 npm, yarn 包管理器</ListItem>
-              <ListItem animate={first}>精通 echarts 等数据可视化工具</ListItem>
-              <ListItem animate={first}>熟悉使用 NodeJs，Mysql </ListItem>
+              <ListItem animate={first}>
+                Fluent in developing web pages using HTML, CSS and Javascript. proficient in various layouts and
+                adapting to various devices.
+              </ListItem>
+              <ListItem animate={first}>
+                Proficient in the latest ECMAScript syntax such ad ES6 and skilled in using TypeScript to optimize
+                projects.
+              </ListItem>
+              <ListItem animate={first}>
+                Proficient in the main Vue and React frameworks and able to develop with mainstream UI frameworks such
+                as Ant-design, Element UI and Material UI.
+              </ListItem>
+              <ListItem animate={first}>
+                Proficient in the Git version control tool, capable of collaborating with teams on development projects.
+              </ListItem>
+              <ListItem animate={first}>Skilled in using module bundling tools such as webpack, vite.</ListItem>
+              <ListItem animate={first}>Skilled in using front-end visualization tools such as E-charts.</ListItem>
+              <ListItem animate={first}>
+                Skilled in using Node.js, Koa, Express and MySQL to build backend projects and use Jenkins to build
+                automated deployment.
+              </ListItem>
             </List>
           </div>
           <div className="content">
             <Title>Work Experience</Title>
             <h3 className="company mt-8">
-              鑫普瑞科技有限公司<span className="period">2018.10 ~ 2021.7</span>
+              Simple X Tech Co. <span className="period">2018.10 ~ 2021.7</span>
             </h3>
             <div className="company-info mt-8">
-              韩国的咖啡24公司的中国支社，主要提供购物网站制作平台以及托管、设计和其他服务。
+              A large website builing platform that provides online website creation tools, servers, domain names and
+              other services.
             </div>
-            <h3 className="role mt-8">职责一</h3>
-            <List>
-              <ListItem animate={second}>利用 HTML、CSS、JavaScript 等技术制作符合W3C网络标准的网页。</ListItem>
-              <ListItem animate={second}>灵活使用 CSS3， 以及自制的 SDK 制作响应式页面。</ListItem>
-              <ListItem animate={second}>为了提高效率，与设计讨论 UI 组件的设计，并制作可重复使用的 UI 组件</ListItem>
-            </List>
-            <h3 className="role mt-8">职责二</h3>
+            <h3 className="role mt-8">Project Experience and Roles Held - 1</h3>
             <List>
               <ListItem animate={second}>
-                使用 Vue, VueX, Typescript, Ant-design 制作和维护员工管理系统的网络应用程序。
+                Create web pages that comply with W3C web standards using HTML, CSS, JavaScript and other technologies.
               </ListItem>
               <ListItem animate={second}>
-                将员工 ISSUE 管理模块，通过 e-charts 可视化，以便更轻松地管理 ISSUE。
+                Use CSS3, bootstrap, post-css, styled-components or tailwind to build a website pixel perfect for both
+                large screen and mobile.
               </ListItem>
-              <ListItem animate={second}>使用 Node.js 实现了文章发布模块的部分逻辑。</ListItem>
-            </List>
-            <h3 className="role mt-8">职责三</h3>
-            <List>
-              <ListItem animate={second}>对三位团队成员进行了为期三个月的React培训。</ListItem>
               <ListItem animate={second}>
-                讲解 createElement、redux 等的核心逻辑时，使用了手写代码的方式进行了说明。
+                Create various types of websites for customers, including personal websites, e-commerce websites,
+                charity websites and so on.
+              </ListItem>
+            </List>
+            <h3 className="role mt-8">Project Experience and Roles Held - 2</h3>
+            <List>
+              <ListItem animate={second}>
+                Create and maintain network applications for the employee management system using Vue, VueX, Typescript,
+                Ant-design.
+              </ListItem>
+              <ListItem animate={second}>
+                Visualize the employee ISSUE management module through e-charts to make it easier to manage ISSUE.
+              </ListItem>
+              <ListItem animate={second}>
+                Building a blog module for the employee management system using Node.js and MySQL.
+              </ListItem>
+            </List>
+            <h3 className="role mt-8">Project Experience and Roles Held - 3</h3>
+            <List>
+              <ListItem animate={second}>
+                Providing React training for three team members over a period of three months.
               </ListItem>
             </List>
           </div>
           <div className="content">
             <Title>Work Experience</Title>
             <h3 className="company mt-8">
-              熊猫跨境电商平台<span className="period">2021.7 ~ 2023.2</span>
+              Cross-border E-commerce LLC<span className="period">2021.7 ~ 2023.2</span>
             </h3>
-            <div className="company-info mt-8">跨境电商平台</div>
+            <div className="company-info mt-8">Cross-border E-commerce</div>
             <List>
-              <ListItem animate={third}>使用 React, React-router, Reduxjs/toolkit 制作商品进货并上架平台。</ListItem>
-              <ListItem animate={third}>使用 Axios，Typescript 深度封装细粒度、低耦合的网络请求模块</ListItem>
-              <ListItem animate={third}>使用 Ant Design 自主构建 UI，UX</ListItem>
-              <ListItem animate={third}>维护公司产品销售平台的微信小程序端。</ListItem>
+              <ListItem animate={third}>
+                No design drafts, reasonably utilize several large UI frameworks to develop company`s procurement
+                management system website using Vue, Typescript and ant-design.
+              </ListItem>
+              <ListItem animate={third}>
+                Develop company common SDKs for different projects such as using Axios and Typescript to develop a
+                network request module can be deeply encapsulated to finely monitor each request and Collaborate with
+                our team to develop a foundational infrastructure for Vue, React and other frameworks tha conforms to
+                our company`s standards.
+              </ListItem>
+              <ListItem animate={third}>
+                Developing staff log management system using React, Typescript and Material UI.
+              </ListItem>
             </List>
+          </div>
+          <div className="content">
+            <Title>Self-Evaluation</Title>
+            <ListItem animate={fourth}>
+              I`m a frontend engineer with four years of experience in builing user-focused web applications. My passion
+              for creating intuitive and engaging user experiences has driven my interest in frontend development
+            </ListItem>
+            <ListItem animate={fourth}>
+              I have adeep understanding of frontend technologies such as HTML, CSS and JavaScript as well as popular
+              frameworks like React and Vue. I pride myself on my ability to quickly adapt to new technologies and
+              project environments and I work closely with other technical professionals to ensure successful project
+              outcomes. Throuhout my career, I have consistently demonstrated a strong work ethic and a commitment to
+              delivering high-quality code. I am always eager to learn new skills and stay up-to-date with the latest
+              developments in frontend technology.
+            </ListItem>
+            <ListItem animate={fourth}>
+              In addition to my technical skills, I am also an effective communicator and team player. I enjoy
+              collaborating with colleagues to solve complex problems and achieve shared goals. Overall, Iam confident
+              that my skills and experience make me a valuable asset to any team in nedd of a skilled and dedecated
+              fronend engineer.{' '}
+            </ListItem>
           </div>
         </Slider>
       </Wrapper>

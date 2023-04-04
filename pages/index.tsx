@@ -106,7 +106,7 @@ const About: FC<IProps> = memo(() => {
         <div className="down">
           <CodePreview tag="download" shake>
             <div className="resume" onClick={donwPopupClickHandler}>
-              简历.doc
+              resume.doc
             </div>
           </CodePreview>
         </div>
@@ -118,7 +118,7 @@ const About: FC<IProps> = memo(() => {
                   Download Resume
                 </a>
                 <a className="link" href="/frontend_JoyRyu_cn.docx" download="简历_柳熙_前端">
-                  下载简历
+                  Resume(Chinese)
                 </a>
               </div>
             </Popup>

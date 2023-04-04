@@ -1,3 +1,4 @@
+import { mobile } from '@styles/mixins'
 import styled from 'styled-components'
 type IProps = {
   animate?: boolean
@@ -6,8 +7,9 @@ const Wrapper = styled.li<IProps>`
   .item {
     display: inline-block;
     position: relative;
-    margin: 4px 0 0 8px;
-    font-size: 13px;
+    margin: 8px 0 0 8px;
+    font-size: 16px;
+    ${mobile(`font-size: 12px;`)}
     &::before {
       content: '';
       position: absolute;
